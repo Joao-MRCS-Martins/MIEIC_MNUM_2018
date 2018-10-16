@@ -1,5 +1,2 @@
 ﻿  TP4_Cubature.cpp
-  TP4_Quadrature.cpp
-c:\users\joaom\desktop\feup\2º ano\mnum\mieic_mnum_2018\tp4\tp4\tp4_quadrature.cpp(130): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Generating Code...
   TP4.vcxproj -> C:\Users\joaom\Desktop\FEUP\2º ano\MNUM\MIEIC_MNUM_2018\TP4\Debug\TP4.exe
