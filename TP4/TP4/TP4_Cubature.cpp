@@ -7,7 +7,7 @@
 using namespace std;
 
 double funcIntDouble(double x, double y) {
-	return x + y;//exp(y-x);
+	return exp(y-x);
 }
 
 double sumVertices(double a1,double b1,double a2,double b2) {
@@ -26,20 +26,18 @@ double centralPoint(double b1, double b2) {
 double simpson(double a1, double b1, double a2, double b2) {
 	double hx = (b1 - a1) / 2;
 	double hy = (b2 - a2) / 2;
-	return hx * hy / 9 * (sumVertices(a1, b1, a2, b2) + 4 * sumInterm(a1, b1, a2, b2) + 16 * centralPoint(b1,b2));
+	return hx * hy / 9 * (sumVertices(a1, b1, a2, b2) + 4* sumInterm(a1, b1, a2, b2) + 16 * centralPoint(b1,b2));
 }
 double solSimpson(double a1,double b1,double a2,double b2,int n) {
 	
 	double hx = abs(b1 - a1) / n;
 	double hy = abs(b2 - a2) / n;
 	double integral = 0;
-	
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				integral += simpson(a1 + i*hx, a1+(i+1)*hx, a2+j*hy,a2+(j+1)* hy);
-			}
+	for (int i = 0; i < (n/2); i++) {
+		for (int j = 0; j < (n/2); j++) {
+			integral += simpson(a1 + 2*i * hx, a1 + 2*(i + 1)*hx, a2 + 2*j * hy, a2 + 2*(j + 1)* hy);
 		}
-
+	}
 	
 	return integral;
 }
