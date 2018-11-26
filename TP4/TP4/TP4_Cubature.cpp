@@ -11,22 +11,23 @@ double funcIntDouble(double x, double y) {
 }
 
 double sumVertices(double a1,double b1,double a2,double b2) {
-	return funcIntDouble(a1, a2) + funcIntDouble(a1, b2) + funcIntDouble(b1, a2) + funcIntDouble(b1, b2);
+	return 1.1+2.4+3.5+1.2;
 }
 
 double sumInterm(double a1, double b1, double a2, double b2) {
-	return funcIntDouble(b1 / 2, a2) + funcIntDouble(b1 / 2, b2) + funcIntDouble(a1, b2 / 2) + funcIntDouble(b1, b2 / 2);
+	return 2.1+1.4+1.5+2.2;
 }
 
 double centralPoint(double b1, double b2) {
-	return funcIntDouble(b1 / 2, b2 / 2);
+	return 1.5;
 }
 
 
 double simpson(double a1, double b1, double a2, double b2) {
 	double hx = (b1 - a1) / 2;
 	double hy = (b2 - a2) / 2;
-	return hx * hy / 9 * (sumVertices(a1, b1, a2, b2) + 4* sumInterm(a1, b1, a2, b2) + 16 * centralPoint(b1,b2));
+	cout << " a1: " << a1 << " b1: " << b1 << " a2: " << a2 << " b2: " << b2 << " hx: " << hx << " hy: " << hy << endl;
+	return hx * hy / 4 * (sumVertices(a1, b1, a2, b2) + 2* sumInterm(a1, b1, a2, b2) + 4 * centralPoint(b1,b2));
 }
 double solSimpson(double a1,double b1,double a2,double b2,int n) {
 	
@@ -43,6 +44,8 @@ double solSimpson(double a1,double b1,double a2,double b2,int n) {
 }
 
 int main() {
+	cout << fixed;
+	cout.precision(3);
 	cout << "The equation is: e^(y-x). Change the equation on the function to fit your needs." << endl << "Beware of values uninputtable on the console, like pi or euler's number." << endl;
 	double a1, b1, a2, b2;
 	int n;
